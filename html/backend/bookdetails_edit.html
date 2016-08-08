@@ -1,0 +1,84 @@
+{% extends "booktype.html" %}
+{% block maincontent %}
+	<h1>EDIT A BOOK</h1>
+	<form action="/bookdetailsEdit?code={{book_details.bookId}}" enctype="multipart/form-data" method="post">
+
+		<div class="row margin">
+			<label>Book ID</label>
+		</div>
+		<div class="row margin">
+			<input type="number" class="form-control" name="bookcode" value="{{book_details.bookId}}" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Title</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="title" value="{{book_details.title}}" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Type</label>
+		</div>
+		<div class="row margin">
+			<select class="form-control" name="type" required>
+				{% for book_type in types %}
+					{% if book_details.category.id() == book_type.key.id() %}
+  						<option value="{{book_type.name}}" selected>{{book_type.name}}</option>	
+					{% else %}
+						<option value="{{book_type.name}}">{{book_type.name}}</option>	
+					{% endif %}
+				{% endfor %}
+			</select>
+		</div>
+
+			
+		<div class="row margin">
+			<label>Author</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="author" value="{{book_details.author}}">
+		</div>
+
+			
+		<div class="row margin">
+			<label>Image File</label>
+		</div>
+		<div class="row margin">
+			<input type="file" name="img">
+		</div>
+
+
+		<div class="row margin">
+			<label>Old Image</label>
+		</div>
+		<div class="row margin">
+			<img src="img?img_id={{book_details.key.id()}}">
+		</div>
+
+
+		<div class="row margin">
+			<label>Price</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="price" value="{{book_details.price}}">
+		</div>
+
+
+		<div class="row margin">	
+			<label>Description</label>
+		</div>
+		<div class="row margin">
+			<textarea class="ckeditor" name="editor1">{{book_details.descrip}}</textarea>
+		</div>
+
+
+		<div class="row margin">
+			<button class="btn btn-default">Submit</button>
+		</div>
+
+	</form>
+	<a href="/bookdetails"><button class="btn btn-default cancel">Cancel</button></a>
+{% endblock %}

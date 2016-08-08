@@ -1,0 +1,249 @@
+@charset "utf-8";
+@font-face{
+	font-family: asap;
+	src: url("Asap-Regular.ttf");
+}
+@font-face{
+	font-family: viga;
+	src: url("Viga-Regular.otf");
+}
+body{
+	background-color: #494b49;
+}
+/*Header*/
+.header{
+	height: 250px;
+	border:5px solid #b5a28d;
+	overflow: hidden;
+}
+#headercontent{
+    list-style:none;
+    margin-top: 10px;
+}
+li p.headerbut{
+	text-align: left;
+	background-color: black;
+	color: white;
+	width:300px;
+	height: 50px;
+	float: right;
+	clear: both;
+	margin-top: 5px;
+    font-size:23px;
+    border-radius: 10px 0px 0px 40px;
+    -webkit-border-radius: 10px 0px 0px 40px;
+    -moz-border-radius: 10px 0px 0px 40px;
+    z-index: 1;
+    opacity: 0.6;
+}
+li p.first{
+	position: relative;
+	right: -30px;
+}
+li p.second{
+	position: relative;
+	right: -60px;
+}
+li p.third{
+	position: relative;
+	right: -90px;
+}
+li p.fourth{
+	position: relative;
+	right: -120px;
+}
+li span.text{
+	position: relative;
+	left: 20px;
+}
+li span.icon{
+	position: relative;
+	left: 10px;
+}
+li .slideinfo{
+	display: none;
+}
+a:hover{
+	text-decoration: none;
+}
+.more{
+	font-weight: bold;
+	color: crimson;
+}
+.more:hover{
+	font-weight: bold;
+	font-style: italic;
+	color: crimson;
+}
+#headerdisplay .title{
+	position: absolute;
+	top: 80px;
+}
+#headerdisplay .title h1{
+	font-size: 40px;
+	font-family: viga;
+	color: maroon;
+	text-shadow: 3px 3px 10px lightgrey;
+}
+#headerdisplay .info{
+	width:500px;
+    height:80px;
+    padding:20px;
+    background-color:#222;
+    position:absolute;
+    top: 160px;
+    left: -10px;
+    border-radius: 0px 20px 0px 0px;
+    -webkit-border-radius: 0px 20px 0px 0px;
+    -moz-border-radius: 0px 20px 0px 0px;
+    color: white;
+    opacity: 0.9;
+}
+.para{
+    color: white;
+    opacity:0.7;
+    font-size: 18px;
+    font-family: asap;
+    word-spacing: 1px;
+}
+#headerdisplay img{
+    position: relative;
+    left: -20px;
+    top: -230px;
+    opacity: 0.2;
+}
+/*Navigation*/
+.nav-bar{
+	background-color: #b5a28d;
+	webkit-border-radius: 0px 0px 40px 40px; 
+	border-radius: 0px 0px 40px 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+.button{
+	background-color: #40423e;
+	opacity: 0.8;
+	width: 120px;
+	border-radius: 20px 20px 30px 30px;
+	-webkit-border-radius: 20px 20px 30px 30px;
+	-moz-border-radius: 20px 20px 30px 30px;
+	border: 2px solid #c6c6c5;
+}
+.button:hover{
+	border-style: dashed;
+}
+h5{
+	text-transform: uppercase;
+	color: #c6c6c5;
+	font-weight: bold;
+	font-size: 18px;
+}
+/*Main content*/
+.subtitle{
+	margin-top: 50px;
+	background-color: black;
+	opacity: 0.6;
+	-webkit-border-radius: 0px 10px 40px 0px;
+	-moz-border-radius: 0px 10px 40px 0px;
+	border-radius: 0px 10px 40px 0px;
+	height: 50px;
+}
+.margin-subtitle{
+	margin-top: 20px;
+}
+.intro{
+	padding-top: 20px; 
+	color: #cccccb;
+	font-size: 16px;
+	font-family: asap;
+}
+.intro a{
+	color: crimson;
+}
+.intro a:hover{
+	color: crimson ;
+	font-style: italic;
+}
+h2{
+	letter-spacing: 1px;
+	color: white;
+}
+.but{
+	margin-top: 40px;
+	background-color: #c6c6c5;
+	opacity: 0.8;
+	width: 80px;
+	height: 80px;
+	border-radius: 50% 50%;
+	-webkit-border-radius: 50% 50%;
+	-moz-border-radius: 50% 50%;	
+}
+.icon-link{
+	font-size: 50px;
+	position: relative;
+	top: 6px;
+	left: 2px;
+	color: #40423e;
+}
+.icon-link:hover{
+	color: black;
+}
+h3{
+	padding: 5px;
+	position: relative;
+	top: -15px;
+	letter-spacing: 1px;
+	font-size: 25px;
+	font-weight: bold;
+	color: 	#c6c6c5;
+}
+.thumbnail{
+	margin-top: 60px;
+	background-color: #40423e;
+	padding: 10px;
+	border-width: 1px;
+	border-color: #c6c6c5;
+	position: relative;
+	left: 40px;
+}
+.thumbnail > .contact-image{
+	height: 180px;
+}
+.contact{
+	list-style-type: none;
+	position: relative;
+	top: -20px;
+}
+.title{
+	color: #c6c6c5;
+	font-size: 18px;
+	position: relative;
+	left: -30px;
+}
+.details{
+	color: #c6c6c5;
+	font-size: 15px;
+}
+/*Footer*/
+.footer{
+	position: relative;
+	top: 30px;
+}
+.line{
+	height: 1px;
+	background-color: #c6c6c5;
+	margin-bottom: 10px;
+}
+.footer-info{
+	font-family: asap;
+	color: #c6c6c5;
+	font-size: 17px;
+}
+.footer-link{
+	color: #c6c6c5;
+}
+.footer-link:hover{
+	color: crimson;
+	font-style: italic;
+}

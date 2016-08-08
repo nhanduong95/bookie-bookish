@@ -1,0 +1,53 @@
+{% extends "homepage.html" %}
+{% block navbar %}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 text-center">
+        <div class="row">
+            {% for type in all_book_types %}
+                {% if type.key.id() == book_details.category.id() %}
+                    <div class="col-sm-2 nav-bar">
+                        <div class="btn button special">
+                            <a href="/type?code={{type.code}}"><h5>{{type.name}}</h5></a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-sm-2 nav-bar">
+                        <div class="btn button">
+                            <a href="/type?code={{type.code}}"><h5>{{type.name}}</h5></a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}  
+        </div>    
+    </div>        
+</div>
+{% endblock %}
+{% block maincontent %}
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{book_details.title}}</h3>
+        </div>
+        <div class="panel-body panel-modify">
+            
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="img?img_id={{book_details.key.id()}}" alt="{{book_details.title}}" class="img-thumbnail margin-thumb">
+                </div>
+                <div class="col-sm-7 text-left info">
+                    <div class="book-descrip">
+                        <p class="book-info"><span class="label">Author:</span>{{book_details.author}}</p>
+                        <p class="book-info"><span class="label">Price:</span> {{book_details.price}} VND</p>
+                        <p class="book-info"><span class="label">Description:</span>{{book_details.descrip}}</p>
+                    </div>
+                    <button class="btn btn-default buy" onClick="thankyou();">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </div>               
+                
+</div>
+{% endblock %}

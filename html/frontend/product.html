@@ -1,0 +1,43 @@
+{% extends "homepage.html" %}
+{% block navbar %}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 text-center">
+        <div class="row">
+            {% for type in all_book_types %}
+            {% if type.name == book_type.name %}
+                <div class="col-sm-2 nav-bar">
+                    <div class="btn button special">
+                        <a href="/type?code={{type.code}}"><h5>{{type.name}}</h5></a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-sm-2 nav-bar">
+                    <div class="btn button">
+                        <a href="/type?code={{type.code}}"><h5>{{type.name}}</h5></a>
+                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}  
+        </div>    
+    </div>        
+</div>
+{% endblock %}
+{% block maincontent %}
+<div class="row">
+    {% for book_details in all_book_details %}
+    {% if book_details.category.id() == book_type.key.id() %}
+    <div class="col-sm-3 text-center">
+        <div class="thumbnail">
+            <img class="image" data-src="holder.js" alt="{{book_details.title}}" src="img?img_id={{book_details.key.id()}}">
+            <div class="caption">
+                <h4>{{book_details.title}}</h4>
+                <h4>{{book_details.price}} VND</h4>
+                <button class="btn link"><a href="/bookinfo?code={{book_details.bookId}}" class="more-link">See more</a></button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

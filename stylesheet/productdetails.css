@@ -1,0 +1,39 @@
+.panel{
+	margin-top: 30px;
+}
+.panel-modify{
+	word-wrap: break-word;
+}
+.panel-heading{
+	background-color: black;
+	opacity: 0.8;
+}
+.panel-title{
+	color: #c6c6c5;
+	position: relative;
+	top: 5px;
+	font-size: 20px;
+	text-transform: capitalize;
+}
+.panel-body{
+	background-color: #dbd0bc;
+}
+.margin-thumb{
+	position: relative;
+	left: 10px;
+}
+.img-thumbnail{
+	max-width: 110%;
+	height: 350px;
+}
+.label{
+	color: darkred;
+	font-size: 20px;
+}
+.info{
+	position: relative;
+	left: 40px;
+}
+.book-info{
+	font-size: 17px;
+}

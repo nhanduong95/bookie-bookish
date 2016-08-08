@@ -1,0 +1,36 @@
+{% extends "booktype.html" %}
+{% block maincontent %}
+	<h1>EDIT BOOK TYPES</h1>
+	<form action="/booktypeEdit?code={{book_type.code}}" method="post">
+
+		<div class="row margin">
+			<label>Type Name</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="name" value="{{book_type.name}}" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Code</label>
+		</div>
+		<div class="row margin">
+			<input type="number" class="form-control" name="code" value="{{book_type.code}}" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Description</label>
+		</div>
+		<div class="row margin">
+			<textarea class="ckeditor" name="editor1">{{book_type.details}}</textarea>
+		</div>
+
+
+		<div class="row margin">
+			<button class="btn btn-default">Submit</button>
+		</div>
+			
+	</form>
+	<a href="/booktype"><button class="btn btn-default cancel">Cancel</button></a>
+{% endblock %}

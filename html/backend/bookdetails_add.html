@@ -1,0 +1,72 @@
+{% extends "booktype.html" %}
+{% block maincontent %}
+	<h1>ADD A NEW BOOK</h1>
+	<form action="/bookdetailsAdd" method="post" enctype="multipart/form-data">
+		
+		<div class="row margin">
+			<label>Book ID</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="bookcode" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Title</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="title" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Type</label>
+		</div>
+		<div class="row margin">
+			<select class="form-control" name="type" required>
+				{% for book_type in types %}
+  					<option value="{{book_type.name}}">{{book_type.name}}</option>	
+				{% endfor %}
+			</select>
+		</div>
+
+			
+		<div class="row margin">
+			<label>Author</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="author">
+		</div>
+
+
+		<div class="row margin">
+			<label>Image File</label>
+		</div>
+		<div class="row margin">
+			<input type="file" name="img" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Price</label>
+		</div>
+		<div class="row margin">
+			<input type="text" class="form-control" name="price" required>
+		</div>
+
+
+		<div class="row margin">
+			<label>Description</label>
+		</div>
+		<div class="row margin">
+			<textarea class="ckeditor" name="editor1"></textarea>
+		</div>
+
+
+		<div class="row margin">
+			<button class="btn btn-default">Submit</button>
+		</div>
+
+	</form>
+	<a href="/bookdetails"><button class="btn btn-default cancel">Cancel</button></a>
+{% endblock %}

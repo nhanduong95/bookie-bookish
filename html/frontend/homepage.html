@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+    <head>
+    <title>Bookie...Bookish</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" type="text/css">
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--Bootbox script-->
+    <script src="/stylesheet/bootbox.min.js"></script>
+    <script src="/stylesheet/bootbox.js"></script>
+    <!--Icon font-->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--CSS external file-->
+    <link rel="stylesheet" href="stylesheet/homepage.css">
+    <link rel="stylesheet" href="stylesheet/product.css">
+    <link rel="stylesheet" href="stylesheet/productdetails.css">
+    <link rel="stylesheet" href="stylesheet/policy.css">
+    <!--CSS normalization-->
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css">
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <!--JavaScript external file-->
+    {% block headerslide %}<script src="javascript/headerslide.js"></script>{% endblock %}
+    <script src="javascript/buynow_alert.js"></script>
+    <script src="javascript/submit_alert.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+
+<!--Header-->
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 header">
+                    <ul id="headercontent">
+                        <li>
+                            <p class="btn headerbut first"><span class="icon"><i class="fa fa-home"></i></span><span class="text">HOME</span></p>
+                            <div class="slideinfo">
+                                <div class="headerimage">1.jpg</div>
+                                <div class="headertitle">BOOKIE...BOOKISH</div>
+                                <div class="headerinfo">
+                                This is where you can buy books with a 30% discount for each.
+                                    <a href="/" class="more">Click here to return to our home!</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <p class="btn headerbut second"><span class="icon"><i class="fa fa-file-text"></i> </span><span class="text">REGISTER</span></p>
+                            <div class="slideinfo">
+                                <div class="headerimage">5.jpg</div>
+                                <div class="headertitle">REGISTER</div>
+                                <div class="headerinfo">
+                                    Register to be informed about the new books and information special discounts.
+                                    <a href="/register" class="more">Click here to register!</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <p class="btn headerbut third"><span class="icon"><i class="fa fa-lock"></i> </span><span class="text">LOG IN</span></p>
+                            <div class="slideinfo">
+                                <div class="headerimage">4.jpg</div>
+                                <div class="headertitle">LOG IN</div>
+                                <div class="headerinfo">
+                                    Log in as user if you are the buyer. Log in as admin if you are the adminstrator 
+                                    <a href="{{ url|safe }}" class="more">{{ url_linktext }}</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div id="headerdisplay">
+                        <img src="" width="1030" class="bg" alt=""/>
+                        <div class="title">
+                            <h1></h1>
+                        </div>
+                        <div class="info">
+                            <p class="para"></p>
+                        </div>    
+                    </div>
+
+                </div>
+            </div>
+<!--Nav-bar-->
+        {% block navbar %}
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 text-center">
+                    <div class="row">
+                        {% for type in all_book_types %}
+                        <div class="col-sm-2 nav-bar">
+                            <div class="btn button">
+                                <a href="/type?code={{type.code}}"><h5>{{type.name}}</h5></a>
+                            </div>
+                        </div>
+                        {% endfor %}  
+                    </div>    
+                </div>        
+            </div>
+        {% endblock %}
+<!-- Content-->
+        {% block maincontent %}
+            <div class="row">
+                <div class="col-sm-1"></div>
+                    
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-7 subtitle">
+                            <h3>Welcome to our bookstore</h3>
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="intro">Welcome to our collection of books. It is not a big one but all of the books here are new and currently hot. Since the products are second-hand, we offer you a discount of 30% for each. 
+                            <p class="intro">Note that the quantity is limited so hurry up and search for your favourite book!</p>
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-sm-4 subtitle margin-subtitle">
+                            <h3>Follow us on</h3>
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-sm-2 text-center">
+                            <div class="but">
+                                <a href="https://facebook.com/" class="type"><span class="icon-link"><i class="fa fa-facebook"></i></span> </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 text-center">
+                            <div class="but">
+                                <a href="https://plus.google.com/" class="type"><span class="icon-link"><i class="fa fa-google-plus"></i></span></a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 text-center">
+                            <div class="but">
+                                <a href="https://twitter.com/" class="type"><span class="icon-link"><i class="fa fa-twitter"></i></span></a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 text-center">
+                            <div class="but">
+                                <a href="https://www.pinterest.com/" class="type"><span class="icon-link"><i class="fa fa-pinterest"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 thumbnail">
+                    <img class="contact-image" data-src="holder.js/" alt="6.jpg" src="/images/6.jpg">
+                    <div class="caption">
+                        <h3>Our Contact</h3>
+                        <ul class="contact">
+                            <li class="title">Address</li>
+                            <li class="details">23 Le Loi Street</li>
+                            <li class="details">District 1</li>
+                            <li class="details">Ho Chi Minh City</li>
+                            <li class="details">Vietnam</li>
+                            <li class="title">Telephone</li>
+                            <li class="details">083 555 758</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+<!--Footer-->
+            <div class="row footer">
+                <div class="col-sm-12">
+                    <div class="line"></div>
+                    <div class="text-center footer-info">
+                        Copyright 2014 - All Rights Reserved | <a href="http://bookie-bookish-new.appspot.com/policy" class="footer-link">Privacy and Policy</a>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </body>
+</html>
+{% endautoescape %}
